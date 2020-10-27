@@ -6,8 +6,13 @@
  Changed files:
 
 assets/scss/components/citidel/cards/cards.scss
+
 assets/scss/roots/mods.scss
+
 templates/components/common/cart-preview.html
+
 templates/components/common/footer.html
+
 templates/components/cart/preview.html
+
 templates/pages/cart.html
