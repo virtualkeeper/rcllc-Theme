@@ -1,0 +1,11 @@
+{
+  "customLayouts": {
+    "brand": {},
+    "category": {},
+    "page": {},
+    "product": {}
+  },
+  "normalStoreUrl": "https://store-ysz18nrorj.mybigcommerce.com/",
+  "accessToken": "2qkflidtwvl2ur9z25xv2qb31t1uu84",
+  "port": "3000"
+}
