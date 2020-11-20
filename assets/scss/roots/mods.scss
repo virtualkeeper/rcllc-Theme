@@ -2226,7 +2226,7 @@ li.pagination-item--previous a{
         background: rgba(255,255,255,.2);
     }
     
-    .navPages-action{
+    .navPages-action:not(.navPage-childList-action){
         padding: 10px 0px;
         position: relative;
     }

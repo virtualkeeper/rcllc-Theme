@@ -8,12 +8,18 @@
         "name": "header_bottom"
       }
     ],
-    "pages/blog": [
+    "pages/brand": [
       {
         "name": "header_bottom--global"
       },
       {
         "name": "header_bottom"
+      },
+      {
+        "name": "brand_below_header"
+      },
+      {
+        "name": "brand_below_content"
       }
     ],
     "pages/brands": [
@@ -38,20 +44,6 @@
         "name": "header_bottom"
       }
     ],
-    "pages/brand": [
-      {
-        "name": "header_bottom--global"
-      },
-      {
-        "name": "header_bottom"
-      },
-      {
-        "name": "brand_below_header"
-      },
-      {
-        "name": "brand_below_content"
-      }
-    ],
     "pages/category": [
       {
         "name": "header_bottom--global"
@@ -64,6 +56,14 @@
       },
       {
         "name": "category_below_content"
+      }
+    ],
+    "pages/blog": [
+      {
+        "name": "header_bottom--global"
+      },
+      {
+        "name": "header_bottom"
       }
     ],
     "pages/checkout": [],
@@ -83,6 +83,7 @@
         "name": "header_bottom"
       }
     ],
+    "pages/order-confirmation": [],
     "pages/home": [
       {
         "name": "header_bottom--global"
@@ -101,18 +102,6 @@
       },
       {
         "name": "home_below_new_products"
-      }
-    ],
-    "pages/order-confirmation": [],
-    "pages/search": [
-      {
-        "name": "header_bottom--global"
-      },
-      {
-        "name": "header_bottom"
-      },
-      {
-        "name": "search_below_content"
       }
     ],
     "pages/page": [
@@ -140,7 +129,18 @@
         "name": "product_below_content"
       }
     ],
-    "pages/subscribed": [
+    "pages/search": [
+      {
+        "name": "header_bottom--global"
+      },
+      {
+        "name": "header_bottom"
+      },
+      {
+        "name": "search_below_content"
+      }
+    ],
+    "pages/sitemap": [
       {
         "name": "header_bottom--global"
       },
@@ -148,7 +148,7 @@
         "name": "header_bottom"
       }
     ],
-    "pages/sitemap": [
+    "pages/subscribed": [
       {
         "name": "header_bottom--global"
       },
@@ -164,9 +164,49 @@
         "name": "header_bottom"
       }
     ],
-    "pages/amp/category": [],
     "pages/amp/product-options": [],
+    "pages/amp/category": [],
     "pages/amp/product": [],
+    "pages/auth/account-created": [
+      {
+        "name": "header_bottom--global"
+      },
+      {
+        "name": "header_bottom"
+      }
+    ],
+    "pages/auth/create-account": [
+      {
+        "name": "header_bottom--global"
+      },
+      {
+        "name": "header_bottom"
+      }
+    ],
+    "pages/auth/login": [
+      {
+        "name": "header_bottom--global"
+      },
+      {
+        "name": "header_bottom"
+      }
+    ],
+    "pages/auth/forgot-password": [
+      {
+        "name": "header_bottom--global"
+      },
+      {
+        "name": "header_bottom"
+      }
+    ],
+    "pages/auth/new-password": [
+      {
+        "name": "header_bottom--global"
+      },
+      {
+        "name": "header_bottom"
+      }
+    ],
     "pages/errors/403": [
       {
         "name": "header_bottom--global"
@@ -215,46 +255,7 @@
         "name": "header_bottom"
       }
     ],
-    "pages/auth/account-created": [
-      {
-        "name": "header_bottom--global"
-      },
-      {
-        "name": "header_bottom"
-      }
-    ],
-    "pages/auth/create-account": [
-      {
-        "name": "header_bottom--global"
-      },
-      {
-        "name": "header_bottom"
-      }
-    ],
-    "pages/auth/forgot-password": [
-      {
-        "name": "header_bottom--global"
-      },
-      {
-        "name": "header_bottom"
-      }
-    ],
-    "pages/auth/new-password": [
-      {
-        "name": "header_bottom--global"
-      },
-      {
-        "name": "header_bottom"
-      }
-    ],
-    "pages/auth/login": [
-      {
-        "name": "header_bottom--global"
-      },
-      {
-        "name": "header_bottom"
-      }
-    ],
+    "pages/unavailable/maintenance": [],
     "pages/unavailable/hibernation": [
       {
         "name": "header_bottom--global"
@@ -263,7 +264,6 @@
         "name": "header_bottom"
       }
     ],
-    "pages/unavailable/maintenance": [],
     "pages/account/add-address": [
       {
         "name": "header_bottom--global"
@@ -312,7 +312,7 @@
         "name": "header_bottom"
       }
     ],
-    "pages/account/edit": [
+    "pages/account/edit-payment-method": [
       {
         "name": "header_bottom--global"
       },
@@ -320,7 +320,7 @@
         "name": "header_bottom"
       }
     ],
-    "pages/account/edit-payment-method": [
+    "pages/account/edit": [
       {
         "name": "header_bottom--global"
       },
@@ -360,7 +360,7 @@
         "name": "header_bottom"
       }
     ],
-    "pages/account/wishlist-details": [
+    "pages/account/returns": [
       {
         "name": "header_bottom--global"
       },
@@ -376,7 +376,7 @@
         "name": "header_bottom"
       }
     ],
-    "pages/account/returns": [
+    "pages/account/wishlist-details": [
       {
         "name": "header_bottom--global"
       },
@@ -426,57 +426,57 @@
   },
   "templates": [
     "layout/amp-iframe",
-    "layout/base",
     "layout/amp",
+    "layout/base",
     "layout/empty",
     "pages/blog-post",
-    "pages/blog",
+    "pages/brand",
     "pages/brands",
     "pages/cart",
-    "pages/brand",
     "pages/category",
+    "pages/blog",
     "pages/checkout",
     "pages/compare",
     "pages/contact-us",
-    "pages/home",
     "pages/order-confirmation",
-    "pages/search",
+    "pages/home",
     "pages/page",
     "pages/product",
-    "pages/subscribed",
+    "pages/search",
     "pages/sitemap",
+    "pages/subscribed",
     "pages/unsubscribe",
-    "pages/amp/category",
     "pages/amp/product-options",
+    "pages/amp/category",
     "pages/amp/product",
+    "pages/auth/account-created",
+    "pages/auth/create-account",
+    "pages/auth/login",
+    "pages/auth/forgot-password",
+    "pages/auth/new-password",
     "pages/errors/403",
     "pages/errors/404",
     "pages/errors/generic",
     "pages/gift-certificate/balance",
     "pages/gift-certificate/purchase",
     "pages/gift-certificate/redeem",
-    "pages/auth/account-created",
-    "pages/auth/create-account",
-    "pages/auth/forgot-password",
-    "pages/auth/new-password",
-    "pages/auth/login",
-    "pages/unavailable/hibernation",
     "pages/unavailable/maintenance",
+    "pages/unavailable/hibernation",
     "pages/account/add-address",
     "pages/account/add-payment-method",
     "pages/account/add-return",
     "pages/account/add-wishlist",
     "pages/account/addresses",
     "pages/account/download-item",
-    "pages/account/edit",
     "pages/account/edit-payment-method",
+    "pages/account/edit",
     "pages/account/inbox",
     "pages/account/payment-methods",
     "pages/account/recent-items",
     "pages/account/return-saved",
-    "pages/account/wishlist-details",
-    "pages/account/wishlists",
     "pages/account/returns",
+    "pages/account/wishlists",
+    "pages/account/wishlist-details",
     "pages/account/orders/all",
     "pages/account/orders/completed",
     "pages/account/orders/details",
@@ -484,22 +484,22 @@
     "pages/custom/category/category-nofilters",
     "components/carousel-content",
     "components/carousel",
-    "components/blog/post",
-    "components/brand/product-listing",
-    "components/brand/show-more",
-    "components/brand/sidebar",
     "components/account/add-wishlist",
     "components/account/address-list",
     "components/account/edit-account",
     "components/account/messages-form",
-    "components/account/navigation",
     "components/account/messages-list",
+    "components/account/navigation",
     "components/account/order-contents",
     "components/account/orders-list",
     "components/account/payment-methods-list",
     "components/account/returns-list",
-    "components/account/wishlist-list",
     "components/account/wishlist-item-list",
+    "components/account/wishlist-list",
+    "components/blog/post",
+    "components/brand/product-listing",
+    "components/brand/show-more",
+    "components/brand/sidebar",
     "components/category/product-listing",
     "components/category/shop-by-price",
     "components/category/show-more",
@@ -508,31 +508,31 @@
     "components/gift-certificate/navigation",
     "components/page/contact-us-form",
     "components/page/rss_feed",
+    "components/social/connect",
+    "components/social/instagram",
+    "components/social/twitter",
+    "components/sitemap/links",
     "components/search/advanced-search",
     "components/search/content-count",
     "components/search/content-listing",
-    "components/search/product-count",
-    "components/search/content-sort-box",
     "components/search/heading",
+    "components/search/content-sort-box",
+    "components/search/product-count",
     "components/search/product-listing",
     "components/search/quick-results",
     "components/search/show-more",
     "components/search/sidebar",
-    "components/sitemap/links",
-    "components/social/connect",
-    "components/social/twitter",
-    "components/social/instagram",
-    "components/cart/content",
     "components/cart/coupon-input",
     "components/cart/gift-certificate-input",
     "components/cart/item-giftwrap",
     "components/cart/item-options",
+    "components/cart/content",
     "components/cart/page-title",
     "components/cart/preview",
-    "components/cart/shipping-quotes",
     "components/cart/shipping-estimator",
-    "components/cart/totals",
+    "components/cart/shipping-quotes",
     "components/cart/status-messages",
+    "components/cart/totals",
     "components/cart/modals/configure-product",
     "components/cart/modals/gift-wrapping-form",
     "components/faceted-search/index",
@@ -541,72 +541,29 @@
     "components/faceted-search/facets/hierarchy-children",
     "components/faceted-search/facets/hierarchy",
     "components/faceted-search/facets/multi",
-    "components/faceted-search/facets/rating",
     "components/faceted-search/facets/range",
-    "components/common/alert-error",
-    "components/common/alert-generic",
-    "components/common/alert-success",
-    "components/common/alert-info",
-    "components/common/alert-modal",
-    "components/common/body",
-    "components/common/cart-preview",
-    "components/common/currency-selector",
-    "components/common/breadcrumbs",
-    "components/common/facebook-like",
-    "components/common/footer",
-    "components/common/geotrust-ssl-seal",
-    "components/common/login-for-pricing",
-    "components/common/header",
-    "components/common/modal",
-    "components/common/navigation-list-alternate",
-    "components/common/navigation-dropdown",
-    "components/common/navigation-list",
-    "components/common/navigation-menu",
-    "components/common/navigation",
-    "components/common/paginator",
-    "components/common/payment-icons",
-    "components/common/quick-search",
-    "components/common/polyfill-script",
-    "components/common/requireness-msg",
-    "components/common/responsive-img",
-    "components/common/search-box",
-    "components/common/small-paginator",
-    "components/common/share",
-    "components/common/store-logo",
-    "components/common/subscription-form",
-    "components/common/social-links",
-    "components/common/wishlist-dropdown",
-    "components/common/forms/checkbox",
-    "components/common/forms/date",
-    "components/common/forms/multiline",
-    "components/common/forms/number",
-    "components/common/forms/password",
-    "components/common/forms/radio",
-    "components/common/forms/select",
-    "components/common/forms/selectortext",
-    "components/common/forms/text",
-    "components/common/icons/icon-defs",
+    "components/faceted-search/facets/rating",
     "components/products/add-to-cart",
     "components/products/bulk-discount-rates",
     "components/products/card",
-    "components/products/carousel",
     "components/products/description-tabs",
-    "components/products/description",
-    "components/products/filter",
+    "components/products/carousel",
     "components/products/featured",
-    "components/products/list-item",
+    "components/products/filter",
     "components/products/grid",
+    "components/products/list-item",
     "components/products/list",
+    "components/products/description",
     "components/products/new",
     "components/products/price-range",
     "components/products/price",
-    "components/products/product-view",
     "components/products/quick-view",
+    "components/products/product-view",
     "components/products/ratings",
-    "components/products/reviews",
     "components/products/related",
-    "components/products/tabs",
+    "components/products/reviews",
     "components/products/similar-by-views",
+    "components/products/tabs",
     "components/products/top",
     "components/products/videos",
     "components/products/modals/writeReview",
@@ -621,6 +578,49 @@
     "components/products/options/set-select",
     "components/products/options/swatch",
     "components/products/options/textarea",
+    "components/common/alert-error",
+    "components/common/alert-generic",
+    "components/common/alert-info",
+    "components/common/alert-modal",
+    "components/common/alert-success",
+    "components/common/body",
+    "components/common/breadcrumbs",
+    "components/common/cart-preview",
+    "components/common/currency-selector",
+    "components/common/facebook-like",
+    "components/common/footer",
+    "components/common/geotrust-ssl-seal",
+    "components/common/header",
+    "components/common/modal",
+    "components/common/navigation-dropdown",
+    "components/common/login-for-pricing",
+    "components/common/navigation-list-alternate",
+    "components/common/navigation-list",
+    "components/common/navigation-menu",
+    "components/common/navigation",
+    "components/common/paginator",
+    "components/common/payment-icons",
+    "components/common/quick-search",
+    "components/common/polyfill-script",
+    "components/common/responsive-img",
+    "components/common/share",
+    "components/common/search-box",
+    "components/common/requireness-msg",
+    "components/common/small-paginator",
+    "components/common/social-links",
+    "components/common/store-logo",
+    "components/common/subscription-form",
+    "components/common/wishlist-dropdown",
+    "components/common/forms/checkbox",
+    "components/common/forms/date",
+    "components/common/forms/number",
+    "components/common/forms/multiline",
+    "components/common/forms/password",
+    "components/common/forms/select",
+    "components/common/forms/radio",
+    "components/common/forms/selectortext",
+    "components/common/forms/text",
+    "components/common/icons/icon-defs",
     "components/amp/category/product-listing",
     "components/amp/category/styles",
     "components/amp/category/subcategories",
@@ -649,8 +649,8 @@
     "components/amp/products/product-view",
     "components/amp/products/ratings",
     "components/amp/products/reviews",
-    "components/amp/products/videos",
     "components/amp/products/styles",
+    "components/amp/products/videos",
     "components/amp/products/options/date",
     "components/amp/products/options/input-checkbox",
     "components/amp/products/options/input-file",

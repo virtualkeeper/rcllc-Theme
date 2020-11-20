@@ -190,8 +190,12 @@
     &.has-subMenu {
         .navPages-list:not(.navPages-list-depth-max) & {
             display: flex;
-            justify-content: space-between;
             align-items: center;
+        }
+        @include breakpoint("medium") {
+            .navPages-list:not(.navPages-list-depth-max) & {
+                justify-content: center;
+            }
         }
     }
 
