@@ -197,4 +197,13 @@
 
 .heroCarousel-action {
     margin: 0;
+
+    @include breakpoint("small") {
+        font-size: fontSize("smallest");
+    }
+
+    @include breakpoint("medium") {
+        font-size: fontSize("smaller");
+        display: block;
+    }
 }

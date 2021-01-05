@@ -18,14 +18,14 @@
                     {{/if}}
                 </td>
                 <td class="cart-item-block cart-item-title">
-                    {{#if brand.name}}
-                        <p class="cart-item-brand">{{brand.name}}</p>
-                    {{/if}}
+                    
                     <h4 class="cart-item-name"><a href="{{url}}">{{name}}</a></h4>
                     {{#if release_date}}
                         <p>({{release_date}})</p>
                     {{/if}}
-
+                    {{#if brand.name}}
+                        <p class="cart-item-brand">{{brand.name}}</p>
+                    {{/if}}
                     {{#if options}}
                         <dl class="definitionList">
                             {{#each options}}

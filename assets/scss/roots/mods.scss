@@ -1,5 +1,9 @@
 // ROOTS STYLES
 
+//Hide pop up screen for Mailchimp Pop in Page Builder Admin
+
+div#root #PopupSignupForm_0 {display:none}
+
 // VARIABLES
 // general
 $logo-width: get-width(stencilString('logo_size'));
@@ -615,6 +619,22 @@ footer .socialLinks{
     text-align: left;
 }
 
+.cart-item-brand {
+    font-size: 12px;
+}
+
+.cart-header-link {
+    font-weight:600;
+}
+
+.redeemable-label {
+    background-color: #fff;
+    color: #ba0c2f;
+    padding: 5px 10px;
+    border: 1px solid #ba0c2f;
+    border-radius: 3px;
+}
+
 .header-logo h1,
 .header-logo > .logo-wrap{
     flex: 0 1 calc(100% - 85px);
@@ -983,8 +1003,9 @@ footer a:hover{
     font-size: 32px;
 }
 .heroCarousel-title + .heroCarousel-description{
-    margin-top: 17px;
+    margin-top: 15px;
 }
+
 .heroCarousel-action,
 .heroCarousel-action:hover,
 .heroCarousel-action:focus{
@@ -2282,14 +2303,16 @@ li.pagination-item--previous a{
         display: none !important;
     }
     
-    .heroCarousel-content{background: $carousel-mobile-textBackground;}
+    .heroCarousel-content{background: $carousel-mobile-textBackground, $carousel-textBackgroundOpacity}
     .heroCarousel-title{color: $carousel-mobile-headingColor;}
-    .heroCarousel-description{color: $carousel-mobile-textColor;}
+    // .heroCarousel-description{color: $carousel-mobile-textColor;}
+    .heroCarousel-description{display: none;}
     .heroCarousel-action,
     .heroCarousel-action:hover,
     .heroCarousel-action:focus{
         color: $carousel-mobile-button-textColor;
         border-color: $carousel-mobile-button-border;
+        margin-top: 30px;
     }
     
     .heroCarousel + .banners{padding-top: 0;}
@@ -2524,6 +2547,16 @@ li.pagination-item--previous a{
     
     // search page
     .page-content{clear: both;}
+
+    //product details
+    .main-heading,.page-heading{
+        font-size: 24px;
+    }
+
+    //checkout preview
+    .fastCart .previewCartCheckout > div{
+        flex: 0 1 100%;
+    }
 }
 
 @media only screen and (min-width: 531px) and (max-width: 800px) {
@@ -2540,6 +2573,12 @@ li.pagination-item--previous a{
     }
     
     .blog-posts-wrap .blog:not(.full-post) figure{margin: 0;}
+}
+
+@media only screen and (max-width: 551px){ 
+    .grid-bg {
+        padding-top: 0px;
+    }
 }
 
 @media only screen and (min-width: 481px) and (max-width: 800px){
