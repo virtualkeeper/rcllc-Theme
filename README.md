@@ -1,7 +1,7 @@
 # dreamerstexas.com
-Stencil theme with changed files notations and general theme development. Uses Stencil, Node v10.16.1, and the Roots BigCommerce theme.
+Stencil theme with changed files notations and general theme development. Uses Stencil, Node v12, and the Roots BigCommerce theme.
 
-Version of Dreamers theme is in title, version of Roots that has been merged is in version number.
+Version of Dreamers theme is in title, version of Roots that has been merged is in version number of theme.
 
 
 
@@ -17,13 +17,15 @@ templates/components/common/footer.html
 
 templates/components/cart/preview.html
 
+templates/components/products/product-view.html
+
 templates/pages/cart.html
 
 
 
 # Roots Theme
 
-Up to date with Cornerstone v4.9.0
+Up to date with Roots 2.8.4
 
 Theme Manual: https://themesupport.weizenyoung.com/help/roots-theme-manual
 

@@ -1,9 +1,5 @@
 // ROOTS STYLES
 
-//Hide pop up screen for Mailchimp Pop in Page Builder Admin
-
-div#root #PopupSignupForm_0 {display:none}
-
 // VARIABLES
 // general
 $logo-width: get-width(stencilString('logo_size'));
@@ -150,6 +146,11 @@ a{text-decoration: none;}
     color: $button--secondary-text;
 }
 
+.swal2-icon.swal2-warning {
+    border-color: #ba0c2f;
+    color: #ba0c2f;
+}
+
 .page{margin: 0;}
 
 .uppercase{text-transform: uppercase;}
@@ -226,7 +227,7 @@ a{text-decoration: none;}
 .grid-bg{
     background: #fff;
     overflow: hidden;
-    padding-top: 40px;
+    padding-top: 15px;
 }
 
 .navUser{
@@ -878,6 +879,10 @@ footer .socialLinks{
 .footer-info-col, 
 .footer-copyright > .powered-by{
     color: $footer-textColor;
+}
+
+.footer-copyright > .powered-by {
+    font-size: .75rem;
 }
 .footer-copyright + .footer-copyright{margin-top: 20px;}
 
@@ -2338,7 +2343,7 @@ li.pagination-item--previous a{
     // footer
     .footer{padding-top: 0;}
     .footer-info-col{
-        border-bottom: 1px solid #4a4a4a;
+        border-bottom: 1px solid #fff;
         margin: 0;
         flex: 1 1 100%;
     }
@@ -2352,11 +2357,10 @@ li.pagination-item--previous a{
     }
     
     .footer-mobile-limited{
-        max-width: calc(100% - 50px);
         margin: auto;
         text-align: center;
-        padding-top: 45px;
-        padding-bottom: 45px;
+        padding-top: 15px;
+        padding-bottom: 15px;
     }
     
     .footer-info-col.footer-info-dropdown:not(.is-open) ul{
@@ -2394,6 +2398,7 @@ li.pagination-item--previous a{
     .footer-copyright{
         padding-top: 0;
         text-align: center;
+        border-top: none;
     }
     
     .footer-payment-icons,
@@ -2402,18 +2407,26 @@ li.pagination-item--previous a{
     }
     
     .footer-payment-icons{
-        border-bottom: 1px solid #4a4a4a;
-        padding-top: 30px;
-        padding-bottom: 30px;
+        padding-top: 15px;
+        padding-bottom: 15px;
     }
     
-    .footer-copyright .powered-by{margin-top: 15px;}
+    .footer-copyright .powered-by{
+        margin-top: 0px;
+        font-size: .75rem;
+    }
 
     .norton-badge {
         height: auto;
         width: 125px;
         margin: 0 auto;
+        padding: 0 0 15px;
         display: block;
+    }
+
+    h5.shop-safe {
+        text-align: center;
+        display: block !important;
     }
     
     // product grid
@@ -2578,6 +2591,9 @@ li.pagination-item--previous a{
 @media only screen and (max-width: 551px){ 
     .grid-bg {
         padding-top: 0px;
+    }
+    .heroCarousel-content {
+        padding: 27px 20px 0px;
     }
 }
 

@@ -76,7 +76,7 @@
             <h1 class="productView-title main-heading" {{#if schema}}itemprop="name"{{/if}}>{{product.title}}</h1>
             {{#if product.brand}}
                 <span class="productView-brand"{{#if schema}} itemprop="brand" itemscope itemtype="http://schema.org/Brand"{{/if}}>
-                    <a href="{{product.brand.url}}"{{#if schema}} itemprop="url"{{/if}}><span{{#if schema}} itemprop="name"{{/if}}><strong>{{product.brand.name}}</strong></span></a>
+                    <a href="{{product.brand.url}}"{{#if schema}} itemprop="url"{{/if}}><span {{#if schema}} itemprop="name"{{/if}}>{{product.brand.name}}</span></a>
                 </span>
             {{/if}}
             {{#if product.sku}}
@@ -145,7 +145,7 @@
                            <i class="icon" aria-hidden="true" style="position: relative; top: -1px;">
                                 <svg><use xlink:href="#icon-plus" /></svg>
                             </i>
-                           <strong style="text-decoration: underline;">{{lang 'products.reviews.new'}}</strong>
+                           <span style="text-decoration: underline;">{{lang 'products.reviews.new'}}</span>
                         </a>
                     </button>
                     {{> components/products/modals/writeReview}}
