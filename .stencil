@@ -2,7 +2,9 @@
   "customLayouts": {
     "brand": {},
     "category": {},
-    "page": {},
+    "page": {
+      "new-home.html": "/home-2021-1/"
+    },
     "product": {}
   },
   "normalStoreUrl": "https://store-ysz18nrorj.mybigcommerce.com/",

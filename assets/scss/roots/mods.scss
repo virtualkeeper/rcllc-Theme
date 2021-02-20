@@ -120,7 +120,10 @@ h3{
 .center{text-align: center;}
 a{text-decoration: none;}
 
-.breadcrumbs{display: block;}
+.breadcrumbs{
+    display: block;
+    margin-top: 1.5rem;
+}
 
 .breadcrumbs,
 .body:not(.home) .page-heading{text-align: left;}
@@ -214,7 +217,7 @@ a{text-decoration: none;}
 .previewCartAction,
 .previewCartItem{
     max-width: $content-maxWidth;
-    padding: 0 15px;
+    padding: 0 5px;
     width: 100%;
     min-width: 0;
 }
@@ -980,8 +983,9 @@ footer a:hover{
 
 // BANNERS
 .banners{
-    background-color: #fff;
-    color: $baseText-color;
+    background-color: #ba0c2f;
+    color: #ffffff;
+    padding: .5rem 0;
 }
 .promo-box-row ul{
     display: flex;
@@ -1068,7 +1072,10 @@ footer a:hover{
 
 // HOME PAGE
 .home{margin-top: 0;}
-.body{margin-bottom: 0;}
+.body{
+    margin-bottom: 0; 
+    margin-top: 0;
+}
 
 .featured-categories{
     display: flex;
@@ -1132,6 +1139,10 @@ footer a:hover{
 // CATEGORY PAGE
 .page--category h1{
     text-transform: stencilString('category_name_capitalization');
+}
+.category-header-graphic {
+    width:100%;
+    height: auto;
 }
 .facetedSearch-refineFilters{margin-bottom: 15px;}
 .facetedSearch .toggleSidebarBlock:not(.facetedSearch-toggle){
@@ -1823,6 +1834,10 @@ li.pagination-item--previous a{
     .navPages-mega .navPage-subMenu > ul{flex: 1 1 0;}
     
     .navPages-mega .navPage-childList{padding-left: 4px;}
+
+    .banners{
+       padding: 1rem 0;
+    }
     
     // CAROUSEL
     .heroCarousel-content--wrapper{

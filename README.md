@@ -17,6 +17,8 @@ templates/components/common/footer.html
 
 templates/components/cart/preview.html
 
+templates/components/stencil/navPages
+
 templates/components/products/product-view.html
 
 templates/pages/cart.html
