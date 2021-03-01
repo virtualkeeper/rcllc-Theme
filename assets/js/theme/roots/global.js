@@ -57,16 +57,16 @@ export default function loaded() {
         const mobileHeaderHeight = headerNoNavHeight + searchHeight;
         const pageOffset = $(window).scrollTop();
 
-        if (pageOffset > mobileHeaderHeight) {
-            if (!$('.quickSearchWrap .form-input').is(':focus')){
-                if (!$('.header').hasClass('slim')) {
-                    $('.header').addClass('slim');
-                }
-                $('.header').css('height', `${mobileHeaderHeight - searchHeight}px`);
-                $('body').css('padding-top', `${mobileHeaderHeight - searchHeight}px`);
-                $('.navUser-item--mobile-search').css('top', '0');
-            }
-        }
+    //     if (pageOffset > mobileHeaderHeight) {
+    //         if (!$('.quickSearchWrap .form-input').is(':focus')){
+    //             if (!$('.header').hasClass('slim')) {
+    //                 $('.header').addClass('slim');
+    //             }
+    //             $('.header').css('height', `${mobileHeaderHeight - searchHeight}px`);
+    //             $('body').css('padding-top', `${mobileHeaderHeight - searchHeight}px`);
+    //             $('.navUser-item--mobile-search').css('top', '0');
+    //         }
+    //     }
 
         if (pageOffset === 0) {
             if ($('.header').hasClass('slim')) {

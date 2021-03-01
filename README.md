@@ -23,6 +23,8 @@ templates/components/products/product-view.html
 
 templates/pages/cart.html
 
+assets\js\theme\roots\global.js
+
 
 
 # Roots Theme

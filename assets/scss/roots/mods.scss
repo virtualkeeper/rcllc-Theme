@@ -217,7 +217,7 @@ a{text-decoration: none;}
 .previewCartAction,
 .previewCartItem{
     max-width: $content-maxWidth;
-    padding: 0 5px;
+    padding: 0 15px;
     width: 100%;
     min-width: 0;
 }
@@ -732,7 +732,7 @@ footer .socialLinks{
     background: $quickSearch-backgroundColor;
     border: 1px solid $search-bg;
     border-top: 0;
-    width: 410px;
+    width: 100%;
     max-width: 100%;
     font-size: 13px;
 }
@@ -834,6 +834,11 @@ footer .socialLinks{
     font-family: $body-font;
     text-transform: none;
 }
+
+// SHOGUN SLIDER
+.shg-sld-slides-padded {
+    padding: 0 0 !important; 
+    }
 
 // FOOTER
 .footer-newsletter{
@@ -983,9 +988,8 @@ footer a:hover{
 
 // BANNERS
 .banners{
-    background-color: #ba0c2f;
-    color: #ffffff;
-    padding: .5rem 0;
+    background-color: #fff;
+    color: $baseText-color;
 }
 .promo-box-row ul{
     display: flex;
@@ -1135,6 +1139,12 @@ footer a:hover{
 }
 
 .read-more{margin-top: 15px;}
+
+// Shogun Homepage Adjustments
+.shg-product-image-wrapper img.shogun-image {
+    max-height: 320px !important;
+    width: auto !important;
+}
 
 // CATEGORY PAGE
 .page--category h1{
@@ -1834,10 +1844,6 @@ li.pagination-item--previous a{
     .navPages-mega .navPage-subMenu > ul{flex: 1 1 0;}
     
     .navPages-mega .navPage-childList{padding-left: 4px;}
-
-    .banners{
-       padding: 1rem 0;
-    }
     
     // CAROUSEL
     .heroCarousel-content--wrapper{
@@ -2125,6 +2131,7 @@ li.pagination-item--previous a{
         position: absolute;
         top: 100%;
         z-index: 50;
+        border: 1px solid #ebebeb;
     }
     
     .quickSearchResults .modal-close{display: block;}
@@ -2325,8 +2332,7 @@ li.pagination-item--previous a{
     
     .heroCarousel-content{background: $carousel-mobile-textBackground, $carousel-textBackgroundOpacity}
     .heroCarousel-title{color: $carousel-mobile-headingColor;}
-    // .heroCarousel-description{color: $carousel-mobile-textColor;}
-    .heroCarousel-description{display: none;}
+    .heroCarousel-description{color: $carousel-mobile-textColor;}
     .heroCarousel-action,
     .heroCarousel-action:hover,
     .heroCarousel-action:focus{
