@@ -1,14 +1,13 @@
 {{#each product.reviews.messages}}
     {{#if error}}
-        {{> components/common/alert-error error}}
+        {{> components/common/alert/alert-error error}}
     {{/if}}
     {{#if success}}
-        {{> components/common/alert-success success}}
+        {{> components/common/alert/alert-success success}}
     {{/if}}
 {{/each}}
 
 <div class="productView" {{#if settings.data_tag_enabled}} data-event-type="product" data-entity-id="{{product.id}}" data-name="{{product.title}}" data-product-category="{{#each product.category}}{{#if @last}}{{this}}{{else}}{{this}}, {{/if}}{{/each}}" data-product-brand="{{product.brand.name}}" data-product-price="{{#if product.price.with_tax}}{{product.price.with_tax.value}}{{else}}{{product.price.without_tax.value}}{{/if}}" data-product-variant="single-product-option"{{/if}}>
-  
     <section class="productView-images" data-image-gallery>
         {{!--
             Note that these image sizes are coupled to image sizes used in /assets/js/theme/common/product-details.js
@@ -43,10 +42,13 @@
         <ul class="productView-thumbnails"{{#gt product.images.length 7}} data-slick='{
                 "infinite": false,
                 "mobileFirst": true,
+                "dots": false,
+                "accessibility": false,
                 "slidesToShow": 7,
-                "slidesToScroll": 1,
-                "dots": false
-            }'{{/gt}}>
+                "slidesToScroll": 1
+            }'
+            data-arrow-label="{{lang 'carousel.arrowAriaLabel'}} {{product.images.length}}"
+            {{/gt}}>
             {{#each product.images}}
                 <li class="productView-thumbnail">
                     <a
@@ -63,7 +65,7 @@
             {{/each}}
         </ul>
     </section>
-    <section class="productView-details">
+    <section class="productView-details product-data">
         <div class="productView-product">
             {{#if page_type '===' 'product'}}
                 {{#or product.price.non_sale_price_with_tax product.price.non_sale_price_without_tax}}
@@ -76,15 +78,13 @@
             <h1 class="productView-title main-heading" {{#if schema}}itemprop="name"{{/if}}>{{product.title}}</h1>
             {{#if product.brand}}
                 <span class="productView-brand"{{#if schema}} itemprop="brand" itemscope itemtype="http://schema.org/Brand"{{/if}}>
-                    <a href="{{product.brand.url}}"{{#if schema}} itemprop="url"{{/if}}><span {{#if schema}} itemprop="name"{{/if}}>{{product.brand.name}}</span></a>
+                    <a href="{{product.brand.url}}"{{#if schema}} itemprop="url"{{/if}}><span{{#if schema}} itemprop="name"{{/if}}><strong>{{product.brand.name}}</strong></span></a>
                 </span>
             {{/if}}
-            {{#if product.sku}}
-                <div class="productSKU">
-                    <dt class="productView-info-name sku-label">{{lang 'products.sku'}}</dt>
-                    <dd class="productView-info-value" data-product-sku{{#if schema}} itemprop="sku"{{/if}}>{{product.sku}}</dd>
-                </div>
-            {{/if}}
+            <div class="productSKU">
+                <dt class="productView-info-name sku-label" {{#unless product.sku}} style="display: none;"{{/unless}}>{{lang 'products.sku'}}</dt>
+                <dd class="productView-info-value" data-product-sku{{#if schema}} itemprop="sku"{{/if}}>{{product.sku}}</dd>
+            </div>
             {{#and product.sku product.upc}}<span style="position:relative; padding: 0 3px; top: -1px;">|</span>{{/and}}
             {{#if product.upc}}
                 <div class="productUPC">
@@ -111,9 +111,11 @@
                 {{/or}}
             </div>
 
-            {{#if settings.bulk_discount_enabled}}
-                {{> components/products/bulk-discount-rates bulk_discount_rates=product.bulk_discount_rates}}
-            {{/if}}
+            {{#and settings.bulk_discount_enabled product.bulk_discount_rates.length}}
+                <div class="productView-info-bulkPricing">
+                    {{> components/products/bulk-discount-rates bulk_discount_rates=product.bulk_discount_rates}}
+                </div>
+            {{/and}}
 
             {{{region name="product_below_price"}}}
             <div class="productView-rating"{{#if product.num_reviews '>' 0}}{{#if schema}} itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating"{{/if}}{{/if}}>
@@ -125,16 +127,14 @@
                             <meta itemprop="reviewCount" content="{{product.num_reviews}}">
                         {{/if}}
                     {{/if}}
-                    {{> components/products/ratings rating=product.rating}}
-                    <span class="productView-reviewLink">
-                        {{#if product.num_reviews '>' 0}}
-                            <a href="{{product.url}}#product-reviews">
-                                {{lang 'products.reviews.link_to_review' total=product.num_reviews}}
-                            </a>
-                        {{else}}
+                        {{> components/products/ratings rating=product.rating}}
+                    {{#if product.num_reviews '>' 0}}
+                        <a href="{{product.url}}#product-reviews" id="productReview_link">
                             {{lang 'products.reviews.link_to_review' total=product.num_reviews}}
-                        {{/if}}
-                    </span>
+                        </a>
+                    {{else}}
+                        <span>{{lang 'products.reviews.link_to_review' total=product.num_reviews}}</span>
+                    {{/if}}
                 {{/if}}
                 {{#if settings.show_product_reviews}}
                     <button class="productView-reviewLink productView-reviewLink--new">
@@ -145,7 +145,7 @@
                            <i class="icon" aria-hidden="true" style="position: relative; top: -1px;">
                                 <svg><use xlink:href="#icon-plus" /></svg>
                             </i>
-                           <span style="text-decoration: underline;">{{lang 'products.reviews.new'}}</span>
+                           <strong style="text-decoration: underline;">{{lang 'products.reviews.new'}}</strong>
                         </a>
                     </button>
                     {{> components/products/modals/writeReview}}
@@ -210,7 +210,7 @@
         <div class="productView-options">
             <form class="form" method="post" action="{{product.cart_url}}" enctype="multipart/form-data"
                   data-cart-item-add>
-                <input type="hidden" name="action" value="add">
+                <input type="hidden" name="action" value="add"/>
                 <input type="hidden" name="product_id" value="{{product.id}}"/>
                 
                 <div class="productView-options-wrap" data-product-option-change style="display:none;">
@@ -251,33 +251,34 @@
                     </div>
                 </div>
                 
-                {{#if product.can_purchase}}
-                    {{> components/products/add-to-cart}}
-                {{/if}}
+                {{> components/products/add-to-cart}}
+
                 {{#if product.out_of_stock}}
                     {{#if product.out_of_stock_message}}
-                        {{> components/common/alert-error product.out_of_stock_message}}
+                        {{> components/common/alert/alert-error product.out_of_stock_message}}
                     {{else}}
-                        {{> components/common/alert-error (lang 'products.sold_out')}}
+                        {{> components/common/alert/alert-error (lang 'products.sold_out')}}
                     {{/if}}
                     <span class="button button--primary button--out-of-stock">Out of Stock</span>
                 {{/if}}
             </form>
+
             {{#if settings.show_wishlist}}
                 {{> components/common/wishlist-dropdown}}
             {{/if}}
             {{#if product.release_date }}
                 <p>{{product.release_date}}</p>
             {{/if}}
+            
+            {{#unless is_ajax}}
+                {{> components/common/share}}
+            {{/unless}}
         </div>
-        {{> components/common/share}}
     </section>
 </div>
 
 <div id="previewModal" class="modal modal--large" data-reveal>
-    <a href="#" class="modal-close" aria-label="{{lang 'common.close'}}" role="button">
-        <span aria-hidden="true">&#215;</span>
-    </a>
+    {{> components/common/modal/modal-close-btn }}
     <div class="modal-content"></div>
     <div class="loadingOverlay"></div>
 </div>

@@ -66,22 +66,6 @@
 <nav class="{{#if category.faceted_search_enabled}}facetedSearch-enabled{{/if}}">
     {{#all category.subcategories theme_settings.subcategories_left_column}}
         <div class="facetedSearch sidebarBlock">
-            <a href="#subcategoryList" role="button" class="{{#if category.faceted_search_enabled}}facetedSearch-toggle{{/if}} toggleLink toggleSidebarBlock button" data-collapsible>
-                <span class="facetedSearch-toggle-indicator">
-                    <span class="toggleLink-text toggleLink-text--on">
-                        Hide subcategories
-                        <i class="icon" aria-hidden="true">
-                            <svg><use xlink:href="#icon-chevron-down" /></svg>
-                        </i>
-                    </span>
-                    <span class="toggleLink-text toggleLink-text--off">
-                        Show subcategories
-                        <i class="icon" aria-hidden="true">
-                            <svg><use xlink:href="#icon-chevron-down" /></svg>
-                        </i>
-                    </span>
-                </span>
-            </a>
             <div id="subcategoryList" class="facetedSearch-navList blocker-container">
                 <div class="accordion accordion--navList">
                     <h5 class="sidebarBlock-heading">{{category.name}}</h5>

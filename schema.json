@@ -3402,6 +3402,98 @@
             "label": "Show buttons vertically"
           }
         ]
+      },
+      {
+        "type": "heading",
+        "content": "Checkout PayPal Button"
+      },
+      {
+        "type": "select",
+        "label": "Button Color",
+        "id": "checkout-paymentbuttons-paypal-color",
+        "force_reload": true,
+        "options": [
+          {
+            "value": "gold",
+            "label": "Gold"
+          },
+          {
+            "value": "blue",
+            "label": "Blue"
+          },
+          {
+            "value": "silver",
+            "label": "Silver"
+          },
+          {
+            "value": "black",
+            "label": "Black"
+          },
+          {
+            "value": "white",
+            "label": "White"
+          }
+        ]
+      },
+      {
+        "type": "select",
+        "label": "Button Shape",
+        "id": "checkout-paymentbuttons-paypal-shape",
+        "force_reload": true,
+        "options": [
+          {
+            "value": "pill",
+            "label": "Pill"
+          },
+          {
+            "value": "rect",
+            "label": "Rectangle"
+          }
+        ]
+      },
+      {
+        "type": "select",
+        "label": "Button Size",
+        "id": "checkout-paymentbuttons-paypal-size",
+        "force_reload": true,
+        "options": [
+          {
+            "value": "small",
+            "label": "Small"
+          },
+          {
+            "value": "medium",
+            "label": "Medium"
+          },
+          {
+            "value": "large",
+            "label": "Large"
+          }
+        ]
+      },
+      {
+        "type": "select",
+        "label": "Button Content",
+        "id": "checkout-paymentbuttons-paypal-label",
+        "force_reload": true,
+        "options": [
+          {
+            "value": "checkout",
+            "label": "PayPal Checkout"
+          },
+          {
+            "value": "pay",
+            "label": "Pay With PayPal"
+          },
+          {
+            "value": "buynow",
+            "label": "Buy Now"
+          },
+          {
+            "value": "paypal",
+            "label": "PayPal"
+          }
+        ]
       }
     ]
   }

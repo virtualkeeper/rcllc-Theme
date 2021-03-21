@@ -32,6 +32,8 @@
 // =============================================================================
 
 body.hasAdminBar {
+    padding-top: $header-height; // (Mobile Header)
+
     @include breakpoint("medium") {
         padding-top: 0;
         margin-top: $adminBar-height;
@@ -46,7 +48,7 @@ body.hasAdminBar {
     }
 
     .navPages-container.is-open {
-        padding-top: 101px;
+        padding-top: $header-height;
     }
 }
 

@@ -1,5 +1,47 @@
 # Changelog
 
+## 3.0.6 - (2021-3-10)
+- Fixed issue with stacking carousel slides
+
+## 3.0.5 - (2021-3-8)
+- version bump
+
+## 3.0.4 - (2021-3-8)
+- Fixed aria label on carousel arrows
+- Fixed horizontal scroll on home page caused by carousel
+- Fixed outline display on logo focus
+
+## 3.0.3 - (2021-3-8)
+- Fixed carousel visibility issue
+
+## 3.0.2 - (2021-02-23)
+- Fixed duplicate "Show Subcategories" button on mobile category pages when filters are disabled. 
+
+## 3.0.1 - (2021-02-16)
+- Updated theme verticals
+- Fixed SKU bug where if base product didn't have an assigned SKU then the SKU wouldn't show even after selecting a variant with an assigned SKU. 
+- Fixed PDP display in IE 11
+
+## 3.0.0 - (2021-02-5)
+- Fixed comparison feature functionality after selecting a product filter.
+- Merged changes from Cornerstone v5.1.0 See version comparison here: https://github.com/bigcommerce/cornerstone/compare/4.9.0...5.1.0 
+
+## 2.8.8 - (2021-01-31)
+- Fixed add to cart button issue where the button was hidden if the default option was out of stock but then wouldn't re-appear if an in stock combination was selected. 
+
+## 2.8.7 - (2021-01-20)
+- Removed all instances of "Created with Sketch" text from theme icons.
+- Adjusted position of carousel text on tablet size devices.
+
+## 2.8.6 - (2020-12-31)
+- Modified position of page builder block at the bottom of category pages to avoid displaying beside pagination.
+
+## 2.8.5 - (2020-12-8)
+- Fixed bulk pricing table display to improve visual jump
+
+## 2.8.4 - (2020-11-19)
+- Fixed alignment of navigation links
+
 ## 2.8.3 - (2020-10-23)
 - Fixed required "*" showing on optional product option labels
 

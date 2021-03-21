@@ -10,7 +10,6 @@
 //
 // -----------------------------------------------------------------------------
 .facetedSearch-toggle {
-    //display: none !important;
     @include grid-row;
     border: $facetedSearch-toggle-border;
     border-radius: $facetedSearch-toggle-borderRadius;

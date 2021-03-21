@@ -3,20 +3,19 @@
         <h5 class="sidebarBlock-heading">
             {{lang 'search.faceted.selected.title'}}
         </h5>
-    
-        
+
         <ul class="inlineList inlineList--labels">
-            {{#each this.items}}
+            {{#each items}}
                 <li>
-                    <a
-                        href="{{ url }}"
-                        class="facetLabel"
-                        rel="nofollow"
-                        data-faceted-search-facet>
+                    <a href="{{url}}"
+                       class="facetLabel"
+                       rel="nofollow"
+                       data-faceted-search-facet
+                    >
                         {{#if facet '===' 'rating'}}
                             {{lang 'search.faceted.selected.rating-label' rating=title}}
                         {{else}}
-                            {{{ sanitize title }}}
+                            {{{sanitize title}}}
                         {{/if}}
     
                         <svg class="icon">
@@ -26,7 +25,7 @@
                 </li>
             {{/each}}
         </ul>
-    
+
         {{#if remove_all_url}}
             <a href="{{ remove_all_url }}" data-faceted-search-facet>
                 {{lang 'search.faceted.selected.clear-all'}}

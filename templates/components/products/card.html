@@ -30,7 +30,11 @@
             {{/unless}}
         {{/is}}
 
-        <a href="{{url}}" {{#if settings.data_tag_enabled}} data-event-type="product-click" {{/if}}>
+        <a href="{{url}}" 
+           class="card-figure__link"
+           aria-label="{{name}},{{> components/products/product-aria-label}}"
+           {{#if settings.data_tag_enabled}} data-event-type="product-click" {{/if}}
+        >
             <div class="card-img-container">
                 <img class="card-image lazyload" data-sizes="auto" src="{{cdn 'img/loading.svg'}}" data-src="{{getImage image 'productgallery_size' (cdn theme_settings.default_image_product)}}" alt="{{image.alt}}" title="{{image.alt}}">
             </div>

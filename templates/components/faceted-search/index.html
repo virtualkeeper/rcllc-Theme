@@ -1,5 +1,5 @@
 <div id="facetedSearch" class="facetedSearch sidebarBlock">
-    {{> components/faceted-search/selected-facets this.selected}}
+    {{> components/faceted-search/selected-facets selected}}
 
     <a href="#facetedSearch-navList" role="button" class="facetedSearch-toggle toggleLink button" data-collapsible>
         <span class="facetedSearch-toggle-indicator">
@@ -22,9 +22,9 @@
     </a>
 
     {{#any facets visible=true}}
-        <div
-            id="facetedSearch-navList"
-            class="facetedSearch-navList blocker-container">
+        <div id="facetedSearch-navList"
+            class="facetedSearch-navList"
+        >
             <div class="accordion accordion--navList">
                 {{#each facets}}
                     {{#if visible}}

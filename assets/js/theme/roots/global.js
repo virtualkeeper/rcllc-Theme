@@ -57,16 +57,16 @@ export default function loaded() {
         const mobileHeaderHeight = headerNoNavHeight + searchHeight;
         const pageOffset = $(window).scrollTop();
 
-    //     if (pageOffset > mobileHeaderHeight) {
-    //         if (!$('.quickSearchWrap .form-input').is(':focus')){
-    //             if (!$('.header').hasClass('slim')) {
-    //                 $('.header').addClass('slim');
-    //             }
-    //             $('.header').css('height', `${mobileHeaderHeight - searchHeight}px`);
-    //             $('body').css('padding-top', `${mobileHeaderHeight - searchHeight}px`);
-    //             $('.navUser-item--mobile-search').css('top', '0');
-    //         }
-    //     }
+        // if (pageOffset > mobileHeaderHeight) {
+        //     if (!$('.quickSearchWrap .form-input').is(':focus')){
+        //         if (!$('.header').hasClass('slim')) {
+        //             $('.header').addClass('slim');
+        //         }
+        //         $('.header').css('height', `${mobileHeaderHeight - searchHeight}px`);
+        //         $('body').css('padding-top', `${mobileHeaderHeight - searchHeight}px`);
+        //         $('.navUser-item--mobile-search').css('top', '0');
+        //     }
+        // }
 
         if (pageOffset === 0) {
             if ($('.header').hasClass('slim')) {
@@ -315,24 +315,44 @@ export default function loaded() {
     });
 
     // compare functionality
-    $('.compare-input').on('change', function checkCompare() {
-        const isSelected = $(this).is(':checked');
-        const compareLabel = $(this).parent();
+    $('.compare-input').on('change', function compareToggle() {
+        checkCompare($(this));
+    });
+    
+    if ($('.page-sidebar').length > 0){
+        // re-bind compare onchange when filters update
+        const config = { attributes: true, childList: true, subtree: true };
+        const callback = function(mutationsList, observer) {
+            // Use traditional 'for loops' for IE 11
+            $('.compare-input').on('change', function compareToggle() {
+                checkCompare($(this));
+            });
+        };
+        
+        const observer = new MutationObserver(callback);
+        observer.observe($('.page-sidebar').get(0), config);
+    }
 
+    $(document).ajaxComplete(() => {
+        $('.compare-input').on('change', function compareToggle() {
+            checkCompare($(this));
+        });
+    });
+    
+    function checkCompare($this) {
+        const isSelected = $this.is(':checked');
+        const compareLabel = $this.parent();
+        
         if (isSelected) {
             compareLabel.find('span').show();
             compareLabel.next().css('visibility', 'visible');
+            compareLabel.next().show();
         } else {
             compareLabel.find('span').hide();
             compareLabel.next().css('visibility', 'hidden');
+            compareLabel.next().hide();
         }
-
-        if ($('.compare-input:checked').length > 0) {
-            $('.compare-button-wrap').show();
-        } else {
-            $('.compare-button-wrap').hide();
-        }
-    });
+    }
 
     // review anchor link
     $('.productView-reviewLink a').on('click', (event) => {

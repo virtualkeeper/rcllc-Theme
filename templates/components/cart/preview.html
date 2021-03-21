@@ -23,20 +23,20 @@
                     <a href="{{urls.checkout.single_address}}" class="button button--primary">
                         {{lang 'cart.added_to_cart.proceed_to_checkout'}}
                     </a>
-                    <!-- {{#if cart.additional_checkout_buttons}}
+                    {{#if cart.additional_checkout_buttons}}
                         <div class="previewCartCheckout-additionalCheckoutButtons">
                             {{#each cart.additional_checkout_buttons}}
                                 {{{this}}}
                             {{/each}}
                         </div>
-                    {{/if}} 
+                    {{/if}}
                     {{#if cart.show_multiple_address_shipping}}
                         <p>
                             <a href="{{urls.checkout.multiple_address}}">
                                 {{lang 'cart.preview.checkout_multiple'}}
                             </a>
                         </p>
-                    {{/if}}-->
+                    {{/if}}
                 </div>
             {{/if}}
         </section>
@@ -58,9 +58,9 @@
                 </figure>
 
                 <div class="productView-details">
-                    <p class="productView-title"><strong>
+                    <h2 class="productView-title">
                         {{name}}
-                    </strong></p>
+                    </h2>
 
                     <div class="productView-brand">
                         {{brand.name}}
@@ -91,9 +91,9 @@
 
     {{#if cart.suggested_products}}
         <section class="suggestiveCart">
-            <h4>
+            <h2>
                 {{lang 'cart.added_to_cart.you_might_also_like'}}&hellip;
-            </h4>
+            </h2>
 
             <ul class="productGrid">
                 {{#each cart.suggested_products}}

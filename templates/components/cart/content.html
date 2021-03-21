@@ -12,27 +12,40 @@
             <tr class="cart-item" data-item-row>
                 <td class="cart-item-block cart-item-figure">
                     {{#if type '==' 'GiftCertificate'}}
-                        <img class="cart-item-fixed-image" src="{{cdn ../../theme_settings.default_image_gift_certificate}}" alt="{{lang 'cart.gift_certificate'}}" title="{{lang 'cart.gift_certificate'}}">
+                        <img
+                            class="cart-item-fixed-image"
+                            src="{{cdn ../theme_settings.default_image_gift_certificate}}"
+                            alt="{{lang 'cart.gift_certificate'}}"
+                            title="{{lang 'cart.gift_certificate'}}"
+                        >
                     {{else}}
-                        <img class="cart-item-image lazyload" data-sizes="auto" src="{{cdn 'img/loading.svg'}}" data-src="{{getImage image 'productthumb_size' (cdn ../../theme_settings.default_image_product)}}" alt="{{image.alt}}" title="{{image.alt}}">
+                        {{> components/common/responsive-img
+                            image=image
+                            class="cart-item-image"
+                            fallback_size=../theme_settings.productthumb_size
+                            lazyload=../theme_settings.lazyload_mode
+                            default_image=../theme_settings.default_image_product
+                        }}
                     {{/if}}
                 </td>
                 <td class="cart-item-block cart-item-title">
-                    
-                    <h4 class="cart-item-name"><a href="{{url}}">{{name}}</a></h4>
-                    {{#if release_date}}
-                        <p>({{release_date}})</p>
-                    {{/if}}
                     {{#if brand.name}}
                         <p class="cart-item-brand">{{brand.name}}</p>
                     {{/if}}
+                    <h2 class="cart-item-name">
+                        <a class="cart-item-name__label" href="{{url}}">{{name}}</a>
+                    </h2>
+                    {{#if release_date}}
+                        <p>({{release_date}})</p>
+                    {{/if}}
+
                     {{#if options}}
                         <dl class="definitionList">
                             {{#each options}}
                                 <dt class="definitionList-key">{{name}}:</dt>
                                 <dd class="definitionList-value">
                                     {{#if is_file}}
-                                        <a href="/viewfile.php?attributeId={{../id}}&cartitem={{../../id}}">{{value}}</a>
+                                        <a href="/viewfile.php?attributeId={{id}}&cartitem={{../id}}">{{value}}</a>
                                     {{else}}
                                         {{{ sanitize value}}}
                                     {{/if}}
@@ -40,7 +53,7 @@
                             {{/each}}
                         </dl>
 
-                        <a href="#" data-item-edit="{{id}}">{{lang 'cart.checkout.change'}}</a>
+                        <a href="#" data-item-edit="{{id}}" data-product-id="{{product_id}}">{{lang 'cart.checkout.change'}}</a>
                     {{/if}}
 
                     {{#if type '==' 'GiftCertificate'}}
@@ -116,17 +129,15 @@
                     {{else}}
                         {{> components/common/login-for-pricing}}
                     {{/or}}
-                    {{#if can_modify}}
-                        <a class="cart-remove icon" data-cart-itemid="{{id}}" href="#" data-confirm-delete="{{lang 'cart.confirm_delete'}}">
+                    {{#or can_modify (if type '==' 'GiftCertificate')}}
+                        <button class="cart-remove icon"
+                                data-cart-itemid="{{id}}"
+                                data-confirm-delete="{{lang 'cart.confirm_delete'}}"
+                                aria-label="{{lang 'cart.remove_item'}}"
+                        >
                             <svg><use xlink:href="#icon-close"></use></svg>
-                        </a>
-                    {{else}}
-                        {{#if type '==' 'GiftCertificate'}}
-                            <a class="cart-remove icon" data-cart-itemid="{{id}}" href="#" data-confirm-delete="{{lang 'cart.confirm_delete'}}">
-                                <svg><use xlink:href="#icon-close"></use></svg>
-                            </a>
-                        {{/if}}
-                    {{/if}}
+                        </button>
+                    {{/or}}
                 </td>
             </tr>
         {{/each}}
