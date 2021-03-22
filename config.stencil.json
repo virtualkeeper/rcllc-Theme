@@ -1,10 +1,14 @@
 {
+  "normalStoreUrl": "https://store-ysz18nrorj.mybigcommerce.com/",
+  "port": "3000",
   "customLayouts": {
     "brand": {},
-    "category": {"category.html": ["/shop-online/","/shop-online/for-her/","/shop-online/for-him/","/shop-online/for-couples/"]},
-    "page": {"page-locations.html":["/store-locations","/central-austin","/north-austin","/forest-hill","/san-antonio","/hillsboro","/terrell"]},
+    "category": {
+      "category.html": ["/shop-online/","/shop-online/for-her/","/shop-online/for-him/","/shop-online/for-couples/"]
+    },
+    "page": {
+      "page-locations.html": ["/store-locations","/central-austin","/north-austin","/forest-hill","/san-antonio","/hillsboro","/terrell"]
+    },
     "product": {}
-  },
-  "normalStoreUrl": "https://store-ysz18nrorj.mybigcommerce.com/",
-  "port": "3000"
+  }
 }

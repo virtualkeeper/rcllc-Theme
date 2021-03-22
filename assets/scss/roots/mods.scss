@@ -2639,6 +2639,30 @@ ol.breadcrumbs,
     text-align: left;
 }
 
+.navBar ul li.navBar-item {
+    color: $button--primary-color;
+    background-color:$button--primary-backgroundColor;
+    border: 1px solid $button--primary-backgroundColor;
+    padding: .65rem 1rem .5rem;
+    text-transform: uppercase;
+    border-radius: 4px;
+
+    &:hover {
+        color: #ba0c2f;
+        background-color:white;
+        border: 1px solid #ba0c2f;   
+        
+        > .navBar-action {
+            color: #ba0c2f;
+        }
+    }
+    
+    > .navBar-action {
+        color: #fff;
+    }
+
+}
+
 .swal2-icon.swal2-warning {
     border-color: #ba0c2f;
     color: #ba0c2f;
@@ -2770,6 +2794,10 @@ ol.breadcrumbs,
         font-size: 24px;
     }
 
+    .navBar--sub {
+        display: none;
+    }
+
     .footer-info-col{
         border-bottom: 1px solid #fff;
     }
@@ -2824,6 +2852,9 @@ ol.breadcrumbs,
     }
     .heroCarousel-content {
         padding: 27px 20px 0px;
+    }
+    .main-heading,.page-heading{
+        margin-top: 30px;
     }
     .stepHeader-actions .stepHeader-column {
         > .button {
