@@ -1,7 +1,6 @@
 {
-  "name": "Dreamers v7.0.3",
+  "name": "Dreamers v7.0.4",
   "version": "3.0.7",
-  "description": "Customized Theme for Dreamers based on the Roots Theme by Weizen Young. Version number correlates to version of Roots them used. ReadMe file in root directory describes customized file locations where overrides are not possible for seamless upgrade.",
   "template_engine": "handlebars_v4",
   "meta": {
     "price": 0,

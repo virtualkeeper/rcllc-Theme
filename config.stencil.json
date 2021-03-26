@@ -9,6 +9,8 @@
     "page": {
       "page-locations.html": ["/store-locations","/central-austin","/north-austin","/forest-hill","/san-antonio","/hillsboro","/terrell"]
     },
-    "product": {}
+    "product": {
+      "product-sale-button.html": "/tremble-kiss/"
+    }
   }
 }

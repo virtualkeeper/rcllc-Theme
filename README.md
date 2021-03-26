@@ -6,12 +6,15 @@ Version of Dreamers theme is in title, version of Roots that has been merged is 
 
 
 # Changed files:
-
+config.json - Update the version number and add additional settings below line 450.
 assets/scss/roots/mods.scss - Extra CSS at bottom of file
 assets/js/theme/global.js - Commented out lines 60 - 69
 templates/components/common/footer.html - Footer customizations ie badge, policies
 templates/pages/custom/ - Entire folder
-config.json - Update the version number and add additional settings below line 450.
+
+
+//TO DO //
+assets/js/theme/custom/dreamers.js - Pull in custom footer and functions
 
 
 

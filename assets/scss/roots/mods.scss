@@ -2699,6 +2699,20 @@ ol.breadcrumbs,
     height: auto;
 }
 
+.sidebar-nav-mobile > a:not(.is-open),
+.sidebar-nav-mobile > a:not(.is-open):hover,
+.sidebar-nav-mobile > a:not(.is-open):focus{
+    background-color: white;
+    border: 1px solid #cccccc;
+    color: #ba0c2f;
+    padding: 9px 15px 7px;
+
+    .icon svg {
+        position: relative;
+        top:-2px;
+    }
+}
+
 .card-figure {
     height: auto !important;
 }
