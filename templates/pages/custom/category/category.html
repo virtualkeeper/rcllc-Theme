@@ -25,12 +25,15 @@ category:
     {{/if}}
 
     <section class="page-content container">
-        {{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
+        
         {{#unless theme_settings.hide_category_page_heading }}
             <h1 class="page-heading">{{category.name}}</h1>
         {{/unless}}
-        {{{region name="category_below_header"}}}
+        {{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
         {{{category.description}}}
+        
+        {{{region name="category_below_header"}}}
+        
         {{#if theme_settings.show_subcategories}}
             {{#if category.subcategories}}
                 <div class="sidebarBlock page-content-subcategories">

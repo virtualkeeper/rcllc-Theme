@@ -4,7 +4,8 @@
   "customLayouts": {
     "brand": {},
     "category": {
-      "category.html": ["/shop-online/","/shop-online/for-her/","/shop-online/for-him/","/shop-online/for-couples/"]
+      "category.html": ["/shop-online/for-her/","/shop-online/for-him/","/shop-online/for-couples/"],
+      "category-shogun.html": ["/shop-online/","/shop-online/harnesses/"]
     },
     "page": {
       "page-locations.html": ["/store-locations","/central-austin","/north-austin","/forest-hill","/san-antonio","/hillsboro","/terrell"]

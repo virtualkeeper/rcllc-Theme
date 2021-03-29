@@ -450,6 +450,9 @@
         "name": "header_bottom"
       },
       {
+        "name": "category_above_header"
+      },
+      {
         "name": "category_below_header"
       },
       {

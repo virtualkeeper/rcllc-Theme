@@ -2634,10 +2634,26 @@ input:focus, button:focus, textarea:focus, select:focus, details:focus, [href]:f
     margin-top: 1.5rem;
 }
 
-ol.breadcrumbs,
-.body:not(.home) .page-heading{
+.breadcrumbs,
+.body:not(.home) .page-heading 
+{
     text-align: left;
+    margin: 1.75rem 0 0rem;
 }
+
+.breadcrumb {
+    font-size:.75rem;
+}
+
+ol.breadcrumbs {
+    display: block;
+    font-size: .75rem;
+    text-align: center;
+    overflow: visible;
+    float: left;
+}
+
+
 
 .navBar ul li.navBar-item {
     color: $button--primary-color;
@@ -2806,6 +2822,9 @@ ol.breadcrumbs,
 
     .main-heading,.page-heading{
         font-size: 24px;
+    }
+    ol.breadcrumbs {
+        float: none;
     }
 
     .navBar--sub {

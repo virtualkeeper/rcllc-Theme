@@ -7,10 +7,11 @@ Version of Dreamers theme is in title, version of Roots that has been merged is 
 
 # Changed files:
 config.json - Update the version number and add additional settings below line 450.
+manifest.json - Add regions for category page.
 assets/scss/roots/mods.scss - Extra CSS at bottom of file
 assets/js/theme/global.js - Commented out lines 60 - 69
-templates/components/common/footer.html - Footer customizations ie badge, policies
-templates/pages/custom/ - Entire folder
+templates/components/common/footer.html - Footer customizations i.e. badge, policies
+templates/pages/custom/ - Entire folder containing different custom pages, category pages, etc.
 
 
 //TO DO //
