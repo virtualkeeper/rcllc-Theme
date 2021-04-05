@@ -2638,7 +2638,7 @@ input:focus, button:focus, textarea:focus, select:focus, details:focus, [href]:f
 .body:not(.home) .page-heading 
 {
     text-align: left;
-    margin: 1.75rem 0 0rem;
+    margin: 1.25rem 0 0;
 }
 
 .breadcrumb {
@@ -2888,6 +2888,12 @@ ol.breadcrumbs {
     }
     .main-heading,.page-heading{
         margin-top: 30px;
+    }
+
+    .breadcrumbs,
+    .body:not(.home) .page-heading 
+    {
+        margin: 1.25rem 0 1rem;
     }
     .stepHeader-actions .stepHeader-column {
         > .button {

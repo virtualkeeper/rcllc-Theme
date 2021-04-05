@@ -19,10 +19,10 @@ category:
 
 <div class="page page--category">
     <section class="page-content container">
-        {{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
         {{#unless theme_settings.hide_category_page_heading }}
             <h1 class="page-heading">{{category.name}}</h1>
         {{/unless}}
+        {{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
         {{{region name="category_below_header"}}}
         {{{category.description}}}
         {{#if theme_settings.show_subcategories}}
